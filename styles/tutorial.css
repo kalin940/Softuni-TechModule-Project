@@ -1,0 +1,94 @@
+body {
+    margin: 2%;
+    background-image: url("background.jpg");
+}
+ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 13px;
+    text-decoration: none;
+}
+ul li {float: left;}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+.right {float: right;}
+
+#search-div{
+    float: right;
+    width:17%;
+    margin:2% 0 2% 2%;
+    padding:1%;
+    background-color: gainsboro;
+    overflow:hidden;
+}
+#article-div{
+    width: 60%;
+    margin:2% 2% 2% 0;
+    float: left;
+    background-color: gainsboro;
+    overflow:hidden;
+}
+article>h4{
+    margin: 0;
+}
+div>h4,div>p{
+    margin: 0;
+
+}
+input[type="text"]{
+    width: 95%;
+}
+#wrapper:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+#main-page-cars{
+    background-color: gainsboro;
+    overflow: auto;
+    width: 100%;
+    height: 30%;
+    padding: 0;
+}
+
+div.first-row,div.second-row{
+    display: inline-block;
+    margin:2%;
+    padding:0.5%;
+
+}
+footer{
+    position:fixed;
+    color: white;
+    bottom:2%;
+    left:1.5%;
+    right:0;
+
+}
+ul li a:hover{background-color: #111;}
+
+@media screen and (max-width: 550px){
+    ul li,
+    ul li.right,
+    #search-div,#article-div{
+        float:none;
+        width: 100%;
+    }
+    #search-div{
+        margin:2% 2% 2% 0;
+        width: 98%;
+    }
+    ul li a {
+        padding: 1px;
+    }
+    footer{
+        position: static;
+    }
+    div.first-row,div.second-row{display: block}
+}
