@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Koli.bg</title>
-    <link rel="stylesheet" type="text/css" href="styles/tutorial.css">
+    <link rel="stylesheet" type="text/css" href="styles/tutorial.css"/>
     <script src="js/jquery-3.1.0.js"></script>
-    <script  type="text/javascript" src="js/startJS.js"></script>
+    <script  type="text/javascript" src="js/start.js"></script>
 </head>
 <body>
+    <section id="loading-box" onclick="$(this).fadeOut()">Loading...</section>
+    <section id="error-box" onclick="$(this).fadeOut()">Error!</section>
     <header>
         <nav>
             <ul>
-                <li><a href="home.html">Home</a></li>
+                <li><a href="home.html" id="linkHome">Home</a></li>
                 <li><a href="#">Cars</a></li>
                 <li><a href="#">Articles</a></li>
                 <li><a href="#">Forum</a></li>
                 <li><a href="#">Contacts</a></li>
-                <li class="right"><a href="login.html" id="loginLink">Login</a></li>
-                <li class="right"><a href="register.html" id="registerLink">Register</a></li>
+                <li><a href="#" id="post-new-car">Sell</a></li>
+                <li class="right" ><a href="login.html" id="loginLink">Login</a></li>
+                <li class="right" ><a href="register.html" id="registerLink">Register</a></li>
+                <li class="right"><a href="login.html" id="logout">Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -39,7 +43,8 @@
             </div>
         </div>
 
-        <div id="main-page-cars">
+        <div id="List-of-cars">
+            <h4>New Cars</h4>
             <div class="first-row"><h4>Car</h4><p>mnogo qka kola bai niki</p></div>
             <div class="first-row"><h4>Car</h4><p>mnogo qka kola bai niki</p></div>
             <div class="first-row"><h4>Car</h4><p>mnogo qka kola bai niki</p></div>
@@ -48,6 +53,29 @@
             <div class="second-row"><h4>Car</h4><p>mnogo qka kola bai niki</p></div>
             <div class="second-row"><h4>Car</h4><p>mnogo qka kola bai niki</p></div>
         </div>
+
+        <section id="loginload">
+            <form id="Login-form">
+                <label for="Login-username">Username:</label><br>
+                <input type="text" name="username" id="Login-username" method="post" required="true"><br>
+                <label for="Login-password">Password</label><br>
+                <input type="text" name="password" id="Login-password" method="post" required="true"><br><br>
+                <input type="submit" value="Login">
+            </form>
+        </section>
+        <section id="register-load">
+            <form id="Register-form">
+                <label for="username">Username:</label><br>
+                <input type="text" name="username" id="username" method="post"><br>
+                <label for="email">Email</label><br>
+                <input type="text" name="email" id="email" method="post">
+                <label for="password">Password</label><br>
+                <input type="text" name="password" id="password" method="post"><br>
+                <label for="re-password"> Re-enter Password </label><br>
+                <input type="text" name="re-password" id="re-password" ><br><br>
+                <input type="submit" value="Register">
+            </form>
+        </section>
     </main>
     <footer>
         &copy;Bai Kalin

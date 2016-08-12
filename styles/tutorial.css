@@ -2,12 +2,20 @@ body {
     margin: 2%;
     background-image: url("background.jpg");
 }
+section{
+    display: none;
+}
+#loading-box,#error-box{
+    width: 90%;
+    margin:1%;
+}
 ul li a {
     display: block;
     color: white;
     text-align: center;
     padding: 10px 13px;
     text-decoration: none;
+    border-radius: 5px;
 }
 ul li {float: left;}
 ul {
@@ -16,7 +24,9 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: #333;
+    border-radius: 5px;
 }
+#logout{display: none}
 .right {float: right;}
 
 #search-div{
@@ -49,7 +59,7 @@ input[type="text"]{
     display: block;
     clear: both;
 }
-#main-page-cars{
+#List-of-cars{
     background-color: gainsboro;
     overflow: auto;
     width: 100%;
@@ -68,12 +78,15 @@ footer{
     color: white;
     bottom:2%;
     left:1.5%;
-    right:0;
-
+    margin:0;
+    width: 96.5%;
+    background-color:#333;
+    text-align: center;
+    border-radius: 5px;
 }
 ul li a:hover{background-color: #111;}
 
-@media screen and (max-width: 550px){
+@media screen and (max-width: 600px){
     ul li,
     ul li.right,
     #search-div,#article-div{

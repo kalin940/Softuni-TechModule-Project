@@ -5,7 +5,7 @@
     <title>Koli.bg</title>
     <link rel="stylesheet" type="text/css" href="styles/tutorial.css">
     <script src="js/jquery-3.1.0.js"></script>
-    <script  type="text/javascript" src="js/startJS.js"></script>
+    <script  type="text/javascript" src="js/start.js"></script>
 </head>
 <body>
 <header>
@@ -18,15 +18,16 @@
             <li><a href="#">Contacts</a></li>
             <li class="right"><a href="login.html" id="loginLink">Login</a></li>
             <li class="right"><a href="register.html" id="registerLink">Register</a></li>
+            <li class="right"><a href="login.html" id="logout">Logout</a></li>
         </ul>
     </nav>
 </header>
 <main>
-    <form>
-        <label for="username">Username:</label><br>
-        <input type="text" name="username" id="username" method="post"><br>
-        <label for="password">Password</label><br>
-        <input type="text" name="password" id="password" method="post"><br><br>
+    <form id="Login-form">
+        <label for="Login-username">Username:</label><br>
+        <input type="text" name="username" id="Login-username" method="post" required="true"><br>
+        <label for="Login-password">Password</label><br>
+        <input type="text" name="password" id="Login-password" method="post" required="true"><br><br>
         <input type="submit" value="Login">
     </form>
 </main>
