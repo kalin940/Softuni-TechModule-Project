@@ -16,11 +16,18 @@ class PostController{
             return;
         }
         
-        if (requestData.content.length < 10){
+        if (requestData.description.length < 10){
             showPopup('error', "Post content must consist of at least 10 symbols.");
             return;
         }
-        
+        if (requestData.price <=0){
+            showPopup('error', "Price must be bigger");
+            return;
+        }
+        if (requestData.car.length < 2){
+            showPopup('error', "Enter car");
+            return;
+        }
         let requestUrl = this._baseServiceUrl;
         
         this._requester.post(requestUrl, requestData, function success(response) {

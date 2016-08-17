@@ -28,13 +28,19 @@ class PostView{
                 $('#create-new-post-request-button').on('click', function (ev) {
                     let title = $('#title').val();
                     let author = $('#author').val();
-                    let content = $('#content').val();
+                    let car=$('#car').val();
+                    let description = $('#content').val();
+                    let price=$('#price').val();
+                    let year=$('#year').val();
                     let date = moment().format("MMMM Do YYYY");
 
                     let data = {
                         title: title,
                         author: author,
-                        content: content,
+                        car:car,
+                        description: description,
+                        price:price,
+                        year:year,
                         date: date
                     };
 
