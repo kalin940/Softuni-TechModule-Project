@@ -16,6 +16,7 @@
         appSecret,
         _guestCredentials
     );
+    
     authService.initAuthorizationType("Kinvey");
     let requester = new Requester(authService);
 
@@ -32,6 +33,12 @@
     let postView = new PostView(selector, mainContentSelector);
     let postController = new PostController(postView, requester, baseUrl, appKey);
 
+    let articlesView = new ArticlesView(selector, mainContentSelector);
+    let articlesController = new ArticlesController(articlesView, requester, baseUrl, appKey);
+
+    let sellsView = new SellsView(selector, mainContentSelector);
+    let sellsController = new SellsController(sellsView, requester, baseUrl, appKey);
+    
     initEventServices();
 
     onRoute("#/",
@@ -45,12 +52,26 @@
         }
     });
 
+    onRoute("#/articles",
+        function () {
+            if (authService.isLoggedIn()){
+                articlesController.showAllArticlesUserPage();
+            }
+            else{
+                articlesController.showAllArticlesGuestPage();
+            }
+        });
+
     onRoute("#/post-:id", function () {
        let top = $("#post-" + this.params['id'])
            .position().top;
         $(window).scrollTop(top);
     });
 
+    onRoute("#/sells", function () {
+            sellsController.showGuestSellsPage(authService.isLoggedIn());
+        });
+    
     onRoute("#/login", function () {
         userController.showLoginPage(authService.isLoggedIn());
     });

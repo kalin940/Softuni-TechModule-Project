@@ -10,8 +10,8 @@ class HomeController{
         this._homeView.showGuestPage();
         let _that = this;
 
-        let recentPosts = [];
-
+        let recentArticles = [];
+        let recentPosts=[];
         let requestUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/cars";
 
         this._requester.get(requestUrl,
@@ -21,16 +21,21 @@ class HomeController{
                 let date2 = new Date (elem2._kmd.ect);
                 return date2 - date1;
             });
-
-            let currentId = 1;
-
-            for (let i = 0; i < data.length && i < 5; i++){
-                data[i].postId = currentId;
-                currentId++;
+            let currentIdPost=1;
+            for (let i = 0; i < data.length && i < 6; i++){
+                data[i].postId = currentIdPost;
+                currentIdPost++;
                 recentPosts.push(data[i]);
             }
 
-            _that._homeView.showGuestPage(recentPosts, data);
+            let currentId = 1;
+            for (let i = 0; i < data.length && i < 4; i++){
+                data[i].postId = currentId;
+                currentId++;
+                recentArticles.push(data[i]);
+            }
+
+            _that._homeView.showGuestPage(recentArticles, recentPosts);
         },
         function error (data) {
             showPopup('error', 'Error loading posts!');
@@ -40,9 +45,8 @@ class HomeController{
     showUserPage(){
         this._homeView.showUserPage();
         let _that = this;
-
-        let recentPosts = [];
-
+        let recentArticles = [];
+        let recentPosts=[];
         let requestUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/cars";
 
         this._requester.get(requestUrl,
@@ -52,16 +56,20 @@ class HomeController{
                     let date2 = new Date (elem2._kmd.ect);
                     return date2 - date1;
                 });
-
-                let currentId = 1;
-
-                for (let i = 0; i < data.length && i < 5; i++){
-                    data[i].postId = currentId;
-                    currentId++;
+                let currentIdPost=1;
+                for (let i = 0; i < data.length && i < 6; i++){
+                    data[i].postId = currentIdPost;
+                    currentIdPost++;
                     recentPosts.push(data[i]);
                 }
 
-                _that._homeView.showUserPage(recentPosts, data);
+                let currentId = 1;
+                for (let i = 0; i < data.length && i < 4; i++){
+                    data[i].postId = currentId;
+                    currentId++;
+                    recentArticles.push(data[i]);
+                }
+                _that._homeView.showUserPage(recentArticles, recentPosts);
             },
             function error (data) {
                 showPopup('error', 'Error loading posts!');
