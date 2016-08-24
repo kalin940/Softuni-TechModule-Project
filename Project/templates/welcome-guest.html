@@ -1,3 +1,14 @@
+<script type="application/javascript">
+    $(".recent-posts-title").click(function(){
+        let gosho = $(".recent-posts").css("display");
+        if(gosho == "none"){
+            $(".recent-posts").show()
+        }
+        else if(gosho== "block"){
+            $(".recent-posts").hide()
+        }
+    })
+</script>
 <aside class="sidebar">
     <div class="logo"><img src="images/logo_sidebar.png" alt=""></div>
     <hr>
