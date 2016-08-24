@@ -7,7 +7,6 @@ class UserView{
     showLoginPage(isLoggedIn){
         let _that = this;
         let templateUrl;
-
         if (isLoggedIn){
             templateUrl = "templates/form-user.html";
         }

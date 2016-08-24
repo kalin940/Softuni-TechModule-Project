@@ -8,6 +8,7 @@ class ArticlesView {
         $.get('templates/welcome-guest.html', function (template) {
             let renderedWrapper = Mustache.render(template, null);
             $(_that._wrapperSelector).html(renderedWrapper);
+            $('header>h3').text("Articles");
             $.get('templates/articles.html', function (template) {
                 let articles = {
                     articles: mainData
@@ -24,6 +25,7 @@ class ArticlesView {
         $.get('templates/welcome-user.html', function (template) {
             let renderedWrapper = Mustache.render(template, null);
             $(_that._wrapperSelector).html(renderedWrapper);
+            $('header>h3').text("Articles");
             $.get('templates/articles.html', function (template) {
                 let articles = {
                     articles: mainData

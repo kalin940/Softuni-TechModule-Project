@@ -22,7 +22,7 @@
 
     let selector = ".wrapper";
     let mainContentSelector = ".main-content";
-
+    
     // Create HomeView, HomeController, UserView, UserController, PostView and PostController
     let homeView = new HomeView(selector, mainContentSelector);
     let homeController = new HomeController(homeView, requester, baseUrl, appKey);
@@ -88,7 +88,7 @@
         // Show the new post page...
         let data ={
             fullName: sessionStorage['fullName']
-        }
+        };
         postController.showCreatePostPage(data, authService.isLoggedIn());
     });
 
@@ -106,6 +106,11 @@
         // Create a new post...
         postController.createNewPost(data);
     });
-
+    
+    bindEventHandler('search', function (ev,data) {
+        // Create a new post...
+        sellsController.search(data);
+    });
+    
     run('#/');
 })();

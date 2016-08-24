@@ -9,6 +9,8 @@ class SellsController {
         this._sellsView.showGuestSellsPage(isLoggedIn);
         let _that = this;
         let requestUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/cars";
+        let allCarsInfoUrl=requestUrl+"/?query={}";
+
         this._requester.get(requestUrl,
             function success(data) {
                 data.sort(function (elem1, elem2) {
@@ -17,6 +19,21 @@ class SellsController {
                     return date2 - date1;
                 });
                 _that._sellsView.showGuestSellsPage(isLoggedIn,data);
+            },
+            function error () {
+                showPopup('error', 'Error loading posts!');
+            });
+    }
+    search(data){
+        let searchRequestUrl=this._baseServiceUrl+"/appdata/" + this._appKey + "/cars/"+data;
+        this._requester.get(searchRequestUrl,
+            function success(searchData) {
+                searchData.sort(function (elem1, elem2) {
+                    let date1 = new Date (elem1._kmd.ect);
+                    let date2 = new Date (elem2._kmd.ect);
+                    return date2 - date1;
+                });
+                _that._sellsView.showGuestSellsPage(searchData);
             },
             function error () {
                 showPopup('error', 'Error loading posts!');
