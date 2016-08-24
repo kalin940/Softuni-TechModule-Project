@@ -1,16 +1,7 @@
 body {
     margin: 2%;
-    background-image: url("lightning-mcqueen-cars.jpg");
-    background-size:contain;
+    background-image: url("background.jpg");
 }
-/*span.article-span{*/
-    /*background-color: #000;*/
-    /*color: #DCDCDC;*/
-/*}*/
-/*.article-div{*/
-    /*background-color: #000;*/
-    /*color: #DCDCDC;*/
-/*}*/
 section,#post-new-car,#logout{
     display: none;
 }
@@ -54,11 +45,6 @@ ul {
 }
 article>h4{
     margin: 0;
-
-    color: #fff;
-    background-color: #333333;
-    text-align: center;
-    border-radius: 5px;
 }
 div>h4,div>p{
     margin: 0;
@@ -78,7 +64,6 @@ input[type="text"]{
     width: 100%;
     height: 30%;
     padding: 0;
-    border-radius: 7px;
 }
 
 div.first-row,div.second-row{
@@ -98,10 +83,7 @@ footer{
     text-align: center;
     border-radius: 5px;
 }
-ul li a:hover{
-    background-color: #DCDCDC;
-    color: #000;
-}
+ul li a:hover{background-color: #111;}
 
 @media screen and (max-width: 600px){
     ul li,
@@ -121,10 +103,4 @@ ul li a:hover{
         position: static;
     }
     div.first-row,div.second-row{display: block}
-}
-h4{
-    text-align: center;
-    background-color: #333;
-    color: #fff;
-    border-radius: 7px;
 }
