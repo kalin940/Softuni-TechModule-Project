@@ -13,7 +13,6 @@ class UserView{
         else{
             templateUrl = "templates/form-guest.html";
         }
-
         $.get(templateUrl, function (template) {
             let renderedWrapper = Mustache.render(template, null);
 
@@ -62,7 +61,6 @@ class UserView{
                     let password = $('#password').val();
                     let confirmPassword = $('#pass-confirm').val();
                     let fullName = $('#full-name').val();
-11
                     let data = {
                         username: username,
                         password: password,
