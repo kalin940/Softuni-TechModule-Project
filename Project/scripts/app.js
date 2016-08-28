@@ -109,5 +109,8 @@
     bindEventHandler('sellSearch', function (ev, data) {
             sellsController.sellSearch(data,authService.isLoggedIn());
     });
+    bindEventHandler('showFullArticle', function (ev, data) {
+        articlesController.showFullArticle(data,authService.isLoggedIn());
+    });
     run('#/');
 })();

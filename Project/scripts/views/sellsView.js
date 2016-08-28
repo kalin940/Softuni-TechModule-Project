@@ -50,13 +50,19 @@ class SellsView {
         $.get(templateUrl, function (template) {
             let renderedWrapper = Mustache.render(template, null);
             $(_that._wrapperSelector).html(renderedWrapper);
+            $('header>h3').text("Sells");
             $.get('templates/posts.html', function (template) {
                 let blogPosts = {
                     blogPosts: data
                 };
-
-            let renderedPosts = Mustache.render(template, blogPosts);
-            $('.articles').html(renderedPosts);
+            if(blogPosts.blogPosts=='') {
+                let renderedPosts = Mustache.render(template, blogPosts);
+                $('.articles').html("<div>No search results</div>");
+            }
+            else{
+                let renderedPosts = Mustache.render(template, blogPosts);
+                $('.articles').html(renderedPosts);
+            }
             $.get('templates/quick-search.html',function (template) {
                 let search = Mustache.render(template, null);
                 $('#search').html(search);

@@ -20,7 +20,7 @@ class ArticlesController {
                 _that._articlesView.showAllArticlesGuestPage(data);
             },
             function error (data) {
-                showPopup('error', 'Error loading posts!');
+                showPopup('error', 'Error loading articles!');
             });
     }
     showAllArticlesUserPage(){
@@ -37,7 +37,18 @@ class ArticlesController {
                 _that._articlesView.showAllArticlesUserPage(data);
             },
             function error (data) {
-                showPopup('error', 'Error loading posts!');
+                showPopup('error', 'Error loading articles!');
+            });
+    }
+    showFullArticle(data,isLoggedIn){
+        let _that = this;
+        let requestUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/articles/?query={\"title\":\""+data+"\"}"
+        this._requester.get(requestUrl,
+            function success(data) {
+                _that._articlesView.showFullArticle(data,isLoggedIn);
+            },
+            function error () {
+                showPopup('error', 'Error loading article!');
             });
     }
 }

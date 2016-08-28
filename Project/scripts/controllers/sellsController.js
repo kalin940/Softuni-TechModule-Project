@@ -25,18 +25,16 @@ class SellsController {
     sellSearch(data,isLoggedIn){
         let _that=this;
         let requestSellUrl;
-        if(data.car!='' && data.year==''){
-            requestSellUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/cars/?query={\"car\":\""+data.car+"\"}";
-        }
-        else if(data.car=='' && data.year!=''){
-            requestSellUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/cars/?query={\"year\":\""+data.year+"\"}";
-        }
-        else if(data.car!='' && data.year!=''){
+        if(data.car!='' && data.year!=''){
             requestSellUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/cars/?query={\"$and\":[{\"car\":\""+data.car+"\",\"year\":\""+data.year+"\"}]}";
         }
-        else{
+        else if(data.car=='' && data.year==''){
             requestSellUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/cars/?query={}";
         }
+        else {
+            requestSellUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/cars/?query={\"$or\":[{\"car\":\""+data.car+"\"},{\"year\":\""+data.year+"\"}]}";
+        }
+
         this._requester.get(requestSellUrl,
             function success(data) {
                 _that._sellsView.showSearchResultPage(data,isLoggedIn);
