@@ -9,8 +9,6 @@ class SellsController {
         this._sellsView.showGuestSellsPage(isLoggedIn);
         let _that = this;
         let requestUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/cars";
-        let allCarsInfoUrl=requestUrl+"/?query={}";
-
         this._requester.get(requestUrl,
             function success(data) {
                 data.sort(function (elem1, elem2) {
@@ -24,16 +22,22 @@ class SellsController {
                 showPopup('error', 'Error loading posts!');
             });
     }
-    search(data){
-        let searchRequestUrl=this._baseServiceUrl+"/appdata/" + this._appKey + "/cars/"+data;
-        this._requester.get(searchRequestUrl,
-            function success(searchData) {
-                searchData.sort(function (elem1, elem2) {
-                    let date1 = new Date (elem1._kmd.ect);
-                    let date2 = new Date (elem2._kmd.ect);
-                    return date2 - date1;
-                });
-                _that._sellsView.showGuestSellsPage(searchData);
+    sellSearch(data,isLoggedIn){
+        let _that=this;
+        let requestSellUrl;
+        if(data.car!='' && data.year!=''){
+            requestSellUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/cars/?query={\"$and\":[{\"car\":\""+data.car+"\",\"year\":\""+data.year+"\"}]}";
+        }
+        else if(data.car=='' && data.year==''){
+            requestSellUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/cars/?query={}";
+        }
+        else {
+            requestSellUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/cars/?query={\"$or\":[{\"car\":\""+data.car+"\"},{\"year\":\""+data.year+"\"}]}";
+        }
+
+        this._requester.get(requestSellUrl,
+            function success(data) {
+                _that._sellsView.showSearchResultPage(data,isLoggedIn);
             },
             function error () {
                 showPopup('error', 'Error loading posts!');

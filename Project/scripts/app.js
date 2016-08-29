@@ -101,16 +101,16 @@
         // Register a new user...
         userController.register(data);
     });
-
+    
     bindEventHandler('createPost', function (ev, data) {
         // Create a new post...
         postController.createNewPost(data);
     });
-    
-    bindEventHandler('search', function (ev,data) {
-        // Create a new post...
-        sellsController.search(data);
+    bindEventHandler('sellSearch', function (ev, data) {
+            sellsController.sellSearch(data,authService.isLoggedIn());
     });
-    
+    bindEventHandler('showFullArticle', function (ev, data) {
+        articlesController.showFullArticle(data,authService.isLoggedIn());
+    });
     run('#/');
 })();
