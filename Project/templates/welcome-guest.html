@@ -1,5 +1,5 @@
 <script type="application/javascript">
-    $(".recent-posts-title").click(function(){
+    $(document).ready(function(){$(".recent-posts-title").click(function(){
         let gosho = $(".recent-posts").css("display");
         if(gosho == "none"){
             $(".recent-posts").show()
@@ -8,10 +8,9 @@
             $(".recent-posts").hide()
         }
     })
+    })
 </script>
-<aside class="sidebar">
-    <div class="logo"><img src="images/logo_sidebar.png" alt=""></div>
-    <hr>
+<nav >
     <nav>
         <ul>
             <li class="single-menu-element">
@@ -39,16 +38,17 @@
                     Register
                 </a>
             </li>
+            <!--<li class="recent-posts-title">Recent Posts-->
+                <!--<ul class="recent-posts">-->
+                <!--</ul>-->
+            <!--</li>-->
         </ul>
 
-        <hr>
-        <h2 class="recent-posts-title">Recent Posts</h2>
-        <hr>
 
-        <ul class="recent-posts">
-        </ul>
+
+
     </nav>
-</aside>
+</nav>
 <main class="main-content">
     <header class="blog-title">
         <h3>home</h3>

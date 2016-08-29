@@ -1,3 +1,15 @@
+<script type="application/javascript">
+    $(document).ready(function(){$(".recent-posts-title").click(function(){
+        let gosho = $(".recent-posts").css("display");
+        if(gosho == "none"){
+            $(".recent-posts").show()
+        }
+        else if(gosho== "block"){
+            $(".recent-posts").hide()
+        }
+    })
+    })
+</script>
 <div class="quick-search-block">
     <form>
         <h1 class="form-title"></h1>
