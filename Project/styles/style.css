@@ -119,7 +119,14 @@ q:before,
 q:after {
     content: none;
 }
-
+nav{
+    float: left;
+    width: 100%;
+    background-color: #cdcdcd;
+    height: 60px;
+    position: fixed;
+    z-index: 1;
+}
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -292,9 +299,11 @@ nav {
     display: block;
     position: absolute;
     width: 200px;
+    z-index:1;
     top: 60px;
     box-shadow: 8px 5px 7px darkgrey;
     border-radius: 0px 0px 15px 0px;
+    display: none;
 }
 .blog-title{
     /*margin-top: 50px;*/
