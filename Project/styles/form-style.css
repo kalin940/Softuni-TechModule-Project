@@ -29,6 +29,23 @@ form {
     margin-bottom: 15px;
 }
 
+
+textarea.content-field{
+    border-radius: 8px;
+    border: 3px solid #f2f2f2;
+    width: 60%;
+    margin: 0 auto 10px;
+    text-align: center;
+    background-color: gainsboro;
+}
+textarea.content-field:focus{
+    font: 12px Lato;
+        outline: none;
+    border: 3px solid slategray !important;
+    color: #000;
+    font-weight: 700;
+    font-size:17px !important;
+}
 input {
     border-radius: 8px;
     border: 3px solid #f2f2f2;
@@ -36,19 +53,22 @@ input {
     height: 35px;
     margin: 0 auto 10px;
     text-align: center;
+    background-color: gainsboro;
 }
-
 input:focus {
     font: 12px Lato;
     font-weight: 100;
     outline: none;
-    border: 3px solid #004237;
+    border: 3px solid slategray;
+    color: #000;
+    font-weight: 700;
+    font-size:1px ;
 }
 
 button {
     font: 16px Lato;
     color: white;
-    background-color: #004237;
+    background-color: #565656;
     padding: 8px;
     margin-top: 15px;
     margin-bottom: 10px;
@@ -56,9 +76,12 @@ button {
     border-radius: 8px;
     width: 50%;
 }
-
+input:disabled{
+    background-color: slategray;
+    color: #fff;
+}
 button:hover {
-    background-color: #565656;
+    background-color: slategray;
 }
 
 .form-link {

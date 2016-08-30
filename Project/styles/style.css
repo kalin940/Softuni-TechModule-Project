@@ -382,3 +382,6 @@ nav {
     75% { transform: rotate(180deg); }
     100% { transform: rotate(0deg); }
 }
+li.single-post >article>h3.title{
+    cursor:help;
+}

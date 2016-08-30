@@ -9,6 +9,18 @@
         }
     })
     })
+    $(document)
+    $('article').on("mouseenter mouseleave", function(){
+        var desc = $(this).children(".subtitle")
+        if($(desc[1]).css("display") == "none"){
+            $(desc[0]).show()
+            $(desc[1]).show()
+        }
+        else{
+            $(desc[0]).hide()
+            $(desc[1]).hide()
+        }
+    })
 </script>
 <nav >
     <nav>
