@@ -38,7 +38,6 @@
 
     let sellsView = new SellsView(selector, mainContentSelector);
     let sellsController = new SellsController(sellsView, requester, baseUrl, appKey);
-    
     initEventServices();
 
     onRoute("#/",
@@ -99,7 +98,7 @@
 
     bindEventHandler('register', function (ev, data) {
         // Register a new user...
-        userController.register(data);
+        userController.register(data); 
     });
     
     bindEventHandler('createPost', function (ev, data) {

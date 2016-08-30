@@ -21,9 +21,11 @@ class HomeView{
                 let blogPosts = {
                     blogPosts: mainData
                 };
-
                 let renderedPosts = Mustache.render(template, blogPosts);
                 $('.articles').html(renderedPosts);
+                $('.content').shorten({
+                    "showChars" : 120
+                });
             })
         });
     }
@@ -48,6 +50,9 @@ class HomeView{
 
                 let renderedPosts = Mustache.render(template, blogPosts);
                 $('.articles').html(renderedPosts);
+                $('.content').shorten({
+                    "showChars" : 120
+                });
             })
         });
     }

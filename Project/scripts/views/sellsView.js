@@ -25,6 +25,9 @@ class SellsView {
                 $.get('templates/quick-search.html',function (template) {
                     let search = Mustache.render(template, null);
                     $('#search').html(search);
+                    $('.content').shorten({
+                        "showChars" : 120
+                    });
                     $('#quick-search-button').on('click', function (ev) {
                         let car = $('#car').val();
                         let year= $('#year').val();
@@ -66,6 +69,9 @@ class SellsView {
             $.get('templates/quick-search.html',function (template) {
                 let search = Mustache.render(template, null);
                 $('#search').html(search);
+                $('.content').shorten({
+                    "showChars" : 120
+                });
                 $('#quick-search-button').on('click', function (ev) {
                     let car = $('#car').val();
                     let year= $('#year').val();

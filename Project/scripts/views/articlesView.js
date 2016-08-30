@@ -41,6 +41,7 @@ class ArticlesView {
                 $('.content').shorten({
                     "showChars" : 120
                 });
+                $('.articles-img').hide();
                 $('.title').on('click', function (ev) {
                     let articleTitle = $(this).text();
                     triggerEvent('showFullArticle', articleTitle);
@@ -61,8 +62,8 @@ class ArticlesView {
             $(_that._wrapperSelector).html(renderedWrapper);
             $('header>h3').text("Articles");
             $.get('templates/articles.html', function (template) {
-                let articles = {
-                    articles: data
+                        let articles = {
+                            articles: data
                 };
                 let renderedPosts = Mustache.render(template, articles);
                 $('.articles').html(renderedPosts);
