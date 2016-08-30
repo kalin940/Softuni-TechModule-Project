@@ -260,11 +260,19 @@ header {
     background-color: #fff;
     color: #cdcdcd;curso
 }
-
+.articles-img{
+    width: 30%;
+    height: 30%;
+    text-align: center;
+}
+.single-article{
+    text-align: center;
+}
 footer {
     width: 100%;
-    position: relative;
+    position: fixed;
     bottom: 0;
+    background-color: #cdcdcd;
     text-align: center;
 }
 nav {
@@ -283,8 +291,10 @@ nav {
     background-color: #cdcdcd;
     display: block;
     position: absolute;
-    width: 164px;
+    width: 200px;
     top: 60px;
+    box-shadow: 8px 5px 7px darkgrey;
+    border-radius: 0px 0px 15px 0px;
 }
 .blog-title{
     /*margin-top: 50px;*/

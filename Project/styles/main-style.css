@@ -8,12 +8,14 @@ a {
 .title {
     font: 32px Oswald;
     font-weight: 600;
+    margin-bottom: 10px;
+    float: left;
 }
 
 .subtitle {
     font: 16px Lato;
     font-weight: 100;
-    margin-left: 3%;
+    /*margin-left: 3%;*/
 }
 
 .content {
@@ -21,9 +23,10 @@ a {
     font: 16px Lato;
     font-weight: 500;
     width: 90%;
-    margin-left: 3%;
+    /*margin-left: 3%;*/
     word-wrap: break-word;
     text-align: left;
+    font-family: cursive;
 
 }
 
@@ -33,4 +36,6 @@ a {
 
 .single-post {
     margin-bottom: 5%;
+    border-bottom: 3px solid #cdcdcd;
+    padding-bottom: 10px;
 }

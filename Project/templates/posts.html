@@ -1,16 +1,4 @@
 {{#blogPosts}}
-<script type="application/javascript">
-    $(document).ready(function(){$(".recent-posts-title").click(function(){
-        let gosho = $(".recent-posts").css("display");
-        if(gosho == "none"){
-            $(".recent-posts").show()
-        }
-        else if(gosho== "block"){
-            $(".recent-posts").hide()
-        }
-    })
-    })
-</script>
 <li class="single-post">
     <article id="post-{{postId}}">
         <h3 class="title">{{title}}</h3>
