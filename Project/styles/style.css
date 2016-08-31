@@ -177,7 +177,7 @@ header {
 }
 
 .blog-title {
-    width: 120px;
+    width: 100%;
     font: 54px Oswald;
     font-weight: 600;
     margin: 0 auto 50px;
@@ -210,7 +210,6 @@ header {
 
 .single-menu-element-link {
     text-decoration: none;
-    color: #004236;
     font-size: 30px;
     -moz-transition-property: font-weight;
     -moz-transition-duration: 3s;
@@ -220,7 +219,9 @@ header {
     -webkit-transition-duration: 3s;
     -webkit-transition-timing-function: linear;
     -webkit-transition-delay: 2.5s;
-    font-weight: 300;
+    font-weight: 600;
+    text-shadow: 4px 4px #cdcdcd;
+    color: #708090;
 
     height: 40px;
     line-height: 32px;
@@ -257,6 +258,8 @@ header {
     font-weight: 600;
     float: left;
     cursor: pointer;
+    margin-top: 2.5px;
+    color: #708090;
 }
 
 .single-recent-post {
@@ -265,12 +268,14 @@ header {
 }
 .single-recent-post:hover{
     background-color: #fff;
-    color: #cdcdcd;curso
+    color: #cdcdcd;
+    cursor:pointer;
 }
 .articles-img{
     width: 30%;
     height: 30%;
     text-align: center;
+    padding-left: 15px;
 }
 .single-article{
     text-align: center;
@@ -306,7 +311,10 @@ nav {
     display: none;
 }
 .blog-title{
-    /*margin-top: 50px;*/
+    font-family: cursive;
+    text-shadow: 7px 5px #cdcdcd;
+    color: #708090;
+    padding-top: 10px;
 }
 
 
@@ -393,4 +401,14 @@ nav {
 }
 li.single-post >article>h3.title{
     cursor:help;
+}
+
+.subtitle-holder{
+    display: initial;
+}
+header > h3{
+    font-family: cursive;
+    text-shadow: 7px 5px #cdcdcd;
+    color: #708090;
+    padding-top: 10px;
 }

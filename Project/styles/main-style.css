@@ -10,6 +10,8 @@ a {
     font-weight: 600;
     margin-bottom: 10px;
     float: left;
+    text-shadow: 3px 1px #cdcdcd;
+    color: #708090;
 }
 
 .subtitle {
