@@ -22,6 +22,7 @@ class SellsView {
 
                 let renderedPosts = Mustache.render(template, blogPosts);
                 $('.articles').html(renderedPosts);
+                $('.recent-posts-title').hide();
                 $.get('templates/quick-search.html',function (template) {
                     let search = Mustache.render(template, null);
                     $('#search').html(search);
@@ -68,6 +69,7 @@ class SellsView {
                 let renderedPosts = Mustache.render(template, blogPosts);
                 $('.articles').html(renderedPosts);
             }
+                $('.recent-posts-title').hide();
             $.get('templates/quick-search.html',function (template) {
                 let search = Mustache.render(template, null);
                 $('#search').html(search);

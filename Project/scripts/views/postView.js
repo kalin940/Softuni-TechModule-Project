@@ -18,7 +18,7 @@ class PostView{
         $.get(templateUrl, function (template) {
             let renderedWrapper = Mustache.render(template, null);
             $(_that._wrapperSelector).html(renderedWrapper);
-
+            $('.recent-posts-title').hide();
             $.get('templates/create-post.html', function (template) {
                 var renderedContent = Mustache.render(template, null);
                 $(_that._mainContentSelector).html(renderedContent);

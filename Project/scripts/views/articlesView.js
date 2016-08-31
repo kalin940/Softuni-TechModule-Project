@@ -19,6 +19,7 @@ class ArticlesView {
                     "showChars" : 120
                 });
                 $('.articles-img').hide();
+                $('.recent-posts-title').hide();
                 $('.title').on('click', function (ev) {
                     let articleTitle = $(this).text();
                     triggerEvent('showFullArticle', articleTitle);
@@ -42,6 +43,7 @@ class ArticlesView {
                     "showChars" : 120
                 });
                 $('.articles-img').hide();
+                $('.recent-posts-title').hide();
                 $('.title').on('click', function (ev) {
                     let articleTitle = $(this).text();
                     triggerEvent('showFullArticle', articleTitle);
@@ -61,6 +63,7 @@ class ArticlesView {
             let renderedWrapper = Mustache.render(template, null);
             $(_that._wrapperSelector).html(renderedWrapper);
             $('header>h3').text("Articles");
+            $('.recent-posts-title').hide();
             $.get('templates/articles.html', function (template) {
                         let articles = {
                             articles: data
@@ -68,6 +71,7 @@ class ArticlesView {
                 let renderedPosts = Mustache.render(template, articles);
                 $('.articles').html(renderedPosts);
                 $('.articles-img').show();
+
                 $('#article-title').on('click', function (ev) {
                     let articleTitle = $('#article-title').text;
                     triggerEvent('showFullArticle', articleTitle);
