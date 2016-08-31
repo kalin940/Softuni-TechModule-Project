@@ -39,7 +39,7 @@ class PostView{
                         author: author,
                         car:car,
                         description: description,
-                        price:price,
+                        price:price*1,
                         year:year,
                         date: date
                     };

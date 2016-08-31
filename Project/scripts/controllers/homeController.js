@@ -13,7 +13,6 @@ class HomeController{
         let recentArticles = [];
         let recentPosts=[];
         let requestUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/cars";
-
         this._requester.get(requestUrl,
         function success(data) {
             data.sort(function (elem1, elem2) {
@@ -34,7 +33,6 @@ class HomeController{
                 currentId++;
                 recentArticles.push(data[i]);
             }
-
             _that._homeView.showGuestPage(recentArticles, recentPosts);
         },
         function error (data) {

@@ -31,9 +31,11 @@ class SellsView {
                     $('#quick-search-button').on('click', function (ev) {
                         let car = $('#car').val();
                         let year= $('#year').val();
+                        let price=$('#price').val();
                         let data={
                             car:car,
-                            year:year
+                            year:year,
+                            price:price*1
                         }
                         triggerEvent('sellSearch', data);
                     });
@@ -75,9 +77,11 @@ class SellsView {
                 $('#quick-search-button').on('click', function (ev) {
                     let car = $('#car').val();
                     let year= $('#year').val();
+                    let price=$('#price').val();
                     let data={
                         car:car,
-                        year:year
+                        year:year,
+                        price:price*1
                     }
                     triggerEvent('sellSearch', data);
                 });

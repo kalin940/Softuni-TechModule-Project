@@ -61,7 +61,7 @@
             }
         });
 
-    onRoute("#/post-:id", function () {
+   onRoute("#/post-:id", function () {
        let top = $("#post-" + this.params['id'])
            .position().top;
         $(window).scrollTop(top);

@@ -24,15 +24,29 @@ class SellsController {
     }
     sellSearch(data,isLoggedIn){
         let _that=this;
-        let requestSellUrl;
-        if(data.car!='' && data.year!=''){
-            requestSellUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/cars/?query={\"$and\":[{\"car\":\""+data.car+"\",\"year\":\""+data.year+"\"}]}";
+        let counterEmptyFields=0;
+        if(data.price==0){
+            counterEmptyFields++;
         }
-        else if(data.car=='' && data.year==''){
-            requestSellUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/cars/?query={}";
+        if(data.car==''){
+            counterEmptyFields++;
+        }
+        if(data.year==''){
+            counterEmptyFields++;
+        }
+        let requestSellUrl;
+        if(counterEmptyFields==0){
+            /*requestSellUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/cars/?query={\"price\":{\"$lte\":"+data.price+"}}";*/
+            requestSellUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/cars/?query={\"car\":\""+data.car+"\",\"year\":\""+data.year+"\",\"price\":{\"$lte\":"+data.price+"}}";
+        }
+        else if(counterEmptyFields==1){
+            requestSellUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/cars/?query={\"$or\":[{\"car\":\""+data.car+"\",\"price\":{\"$lte\":"+data.price+"}},{\"year\":\""+data.year+"\",\"price\":{\"$lte\":"+data.price+"}},{\"car\":\""+data.car+"\",\"year\":\""+data.year+"\"}]}";
+        }
+        else if(counterEmptyFields==2){
+            requestSellUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/cars/?query={\"$or\":[{\"car\":\""+data.car+"\"},{\"year\":\""+data.year+"\"},{\"price\":{\"$lte\":"+data.price+"}}]}";
         }
         else {
-            requestSellUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/cars/?query={\"$or\":[{\"car\":\""+data.car+"\"},{\"year\":\""+data.year+"\"}]}";
+            requestSellUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/cars/?query={}";
         }
 
         this._requester.get(requestSellUrl,
